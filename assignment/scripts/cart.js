@@ -21,8 +21,8 @@ console.log('Returning our basket.', basket);
 
 
 function listItems(array) {
-  for (x = 0; x < array.length; x++) {
-    console.log(array[x]);
+  for (let food = 0; food < array.length; food++) {
+    console.log(array[food]);
   }
   return array;
 }
@@ -43,5 +43,3 @@ addItem('Soda Pop');
 addItem('Soup');
 
 console.log('And one let\'s check our basket one more time:', listItems(basket));
-
-// console.log('Let\'s see our basket now:', listItems(basket));
