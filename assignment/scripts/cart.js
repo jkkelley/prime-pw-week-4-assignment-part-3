@@ -7,14 +7,27 @@ let basket = [];
 // Checking to see our array is empty in the console below.
 console.log('Our basket array will return empty.', basket);
 
-function addItem( item ) {
-  basket.push(item);
-  // Using this expression below, we're showing that the basket has 1 item or more
-  // in it.
-  if (basket.length > 0) {
+// function addItem( item ) {
+//   basket.push(item);
+//   // Using this expression below, we're showing that the basket has 1 item or more
+//   // in it.
+//   if (basket.length > 0) {
+//     return true;
+//   }
+// }
+
+
+// Stretch Goals adding ifFull function to addItem function.
+const maxItems = 5;
+function addItem (item) {
+  if (isFull()) {
+    return false;
+  } else {
+    basket.push(item);
     return true;
   }
 }
+
 
 console.log('Let\'s add Salsa to our basket using addItem:', addItem('Salsa'));
 console.log('Calling our basket variable to see what\'s inside.', basket);
@@ -39,7 +52,11 @@ console.log('Adding Soup (expect true)', addItem('Soup'));
 listItems(basket);
 console.log('Adding Chips (expect true)', addItem('Chips'));
 listItems(basket);
-console.log(`Basket contains ${basket}`)
+console.log('Adding Carrots (expect true)', addItem('Carrots'));
+listItems(basket);
+console.log('Adding Cherries (expect false)', addItem('Cherries'));
+listItems(basket);
+console.log(`Basket doesn't contain Cherries. ${basket}`)
 
 console.log('Showing our basket.', listItems(basket));
 
@@ -59,8 +76,6 @@ console.log('Calling our basket variable to show it\'s empty', basket);
 
 
 // Stretch Goals
-
-const maxItems = 5;
 
 function isFull() {
   if (basket.length < maxItems) {
