@@ -20,9 +20,11 @@ console.log('Let\'s add Salsa to our basket using addItem:', addItem('Salsa'));
 console.log('Returning our basket.', basket);
 
 
+// Creating a function to list our items in our basket. Can be used to check
+// any array and list thier items.
 function listItems(array) {
   for (let food = 0; food < array.length; food++) {
-    console.log(array[food]);
+    console.log('Food added: ' + array[food]);
   }
   return array;
 }
@@ -43,3 +45,15 @@ addItem('Soda Pop');
 addItem('Soup');
 
 console.log('And one let\'s check our basket one more time:', listItems(basket));
+
+// Creating a function to empty our basket. A while loop is great for this function.
+// It allows us to look at the length of our array and as long as it's greater than 0,
+// it will continue to pop out our items.
+function empty(array) {
+  while (array.length > 0){
+    array.pop();
+  }
+  return basket;
+}
+
+console.log('Emptying our basket:', empty(basket));
