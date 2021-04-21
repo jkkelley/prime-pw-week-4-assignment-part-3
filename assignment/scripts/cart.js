@@ -84,6 +84,7 @@ console.log('Calling our basket variable to show it\'s empty', basket);
 // Stretch Goals
 
 function isFull() {
+  // Below we're asking if the length of our array is less than our constant maxItems.
   if (basket.length < maxItems) {
     return false;
   } else {
