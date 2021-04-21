@@ -71,7 +71,7 @@ console.log('Showing our basket.', listItems(basket));
 // It allows us to look at the length of our array and as long as it's greater than 0,
 // it will continue to pop out our items.
 function empty(array) {
-  while (array.length > 0){
+  while (array.length > 0) {
     array.pop();
   }
   return array;
