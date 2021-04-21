@@ -3,9 +3,12 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
+const maxItems = 5; // Stretch Goals variable
 
 // Checking to see our array is empty in the console below.
 console.log('Our basket array will return empty.', basket);
+
+// Below is the code I came up with before the Stretch Goals.
 
 // function addItem( item ) {
 //   basket.push(item);
@@ -18,7 +21,7 @@ console.log('Our basket array will return empty.', basket);
 
 
 // Stretch Goals adding ifFull function to addItem function.
-const maxItems = 5;
+
 function addItem (item) {
   if (isFull()) {
     return false;
@@ -54,9 +57,12 @@ console.log('Adding Chips (expect true)', addItem('Chips'));
 listItems(basket);
 console.log('Adding Carrots (expect true)', addItem('Carrots'));
 listItems(basket);
-console.log('Adding Cherries (expect false)', addItem('Cherries'));
+console.log('We can\'t add Cherries (expect false):', addItem('Cherries'));
 listItems(basket);
 console.log(`Basket doesn't contain Cherries. ${basket}`)
+
+console.log('Expecting Carrots to be removed:', removeItem(basket, 'Carrots'));
+console.log('Expected output is null for item Strawberries:', removeItem(basket, 'Strawberries'))
 
 console.log('Showing our basket.', listItems(basket));
 
@@ -86,3 +92,17 @@ function isFull() {
 }
 
 isFull(basket);
+
+
+function removeItem (array, item) {
+  let indexOfItem = array.indexOf(item);
+  // Below we need to check to see if the item is in the array.
+  if (indexOfItem > 0) {
+    // Below we ask for the first occurence of the item and want it taken out.
+    array.splice(indexOfItem, 1)
+    return item;
+  } else {
+    // If the item wasn't found, we are asking to return a null value.
+    return null;
+  }
+}
