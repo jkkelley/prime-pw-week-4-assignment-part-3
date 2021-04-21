@@ -61,6 +61,9 @@ console.log('We can\'t add Cherries (expect false):', addItem('Cherries'));
 listItems(basket);
 console.log(`Basket doesn't contain Cherries. ${basket}`)
 
+// The console log below shows our Stretch Goals removeItem function in the works.
+// I gave to examples, one showing an item that's in our basket and another one that
+// isn't in our basket and returns a null value.
 console.log('Expecting Carrots to be removed:', removeItem(basket, 'Carrots'));
 console.log('Expected output is null for item Strawberries:', removeItem(basket, 'Strawberries'))
 
