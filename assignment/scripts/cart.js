@@ -91,8 +91,6 @@ function isFull() {
   }
 }
 
-isFull(basket);
-
 
 function removeItem (array, item) {
   let indexOfItem = array.indexOf(item);
