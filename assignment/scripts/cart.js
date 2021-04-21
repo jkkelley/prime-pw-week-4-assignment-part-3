@@ -56,3 +56,18 @@ function empty(array) {
 
 console.log('Our basket shows it is empty now:', empty(basket));
 console.log('Calling our basket variable to show it\'s empty', basket);
+
+
+// Stretch Goals
+
+const maxItems = 5;
+
+function isFull() {
+  if (basket.length < maxItems) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+isFull(basket);
