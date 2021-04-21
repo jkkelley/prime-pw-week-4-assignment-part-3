@@ -17,14 +17,13 @@ function addItem( item ) {
 }
 
 console.log('Let\'s add Salsa to our basket using addItem:', addItem('Salsa'));
-console.log('Returning our basket.', basket);
+console.log('Calling our basket variable to see what\'s inside.', basket);
 
 
-// Creating a function to list our items in our basket. Can be used to check
-// any array and list thier items.
+// Creating a function to list our items in our basket.
 function listItems(array) {
   for (let food = 0; food < array.length; food++) {
-    console.log('Food added: ' + array[food]);
+    console.log('Food item: ' + array[food]);
   }
   return array;
 }
@@ -33,18 +32,17 @@ console.log('Let\'s test our listItems function:', listItems(basket));
 
 
 // Let's add some more items to our basket using our addItem function.
-addItem('Popcorn');
-addItem('Juice');
-addItem('Milk');
-addItem('Cheese');
+console.log(`Basket contains ${basket}`)
+console.log('Adding Popcorn (expect true)', addItem('Popcorn'));
+listItems(basket);
+console.log('Adding Soup (expect true)', addItem('Soup'));
+listItems(basket);
+console.log('Adding Chips (expect true)', addItem('Chips'));
+listItems(basket);
+console.log(`Basket contains ${basket}`)
 
-console.log('Let\'s see our basket now:', listItems(basket));
+console.log('Showing our basket.', listItems(basket));
 
-addItem('Corn');
-addItem('Soda Pop');
-addItem('Soup');
-
-console.log('And one let\'s check our basket one more time:', listItems(basket));
 
 // Creating a function to empty our basket. A while loop is great for this function.
 // It allows us to look at the length of our array and as long as it's greater than 0,
@@ -53,7 +51,8 @@ function empty(array) {
   while (array.length > 0){
     array.pop();
   }
-  return basket;
+  return array;
 }
 
-console.log('Emptying our basket:', empty(basket));
+console.log('Our basket shows it is empty now:', empty(basket));
+console.log('Calling our basket variable to show it\'s empty', basket);
