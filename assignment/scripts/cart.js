@@ -3,7 +3,7 @@ console.log('***** Cart Functions *****');
 // We want to see how you are testing your code!!!
 
 let basket = [];
-const maxItems = 5; // Stretch Goals variable
+const maxItems = 5; // Stretch Goals Global variable.
 
 // Checking to see our array is empty in the console below.
 console.log('Our basket array will return empty.', basket);
@@ -88,6 +88,7 @@ console.log('Calling our basket variable to show it\'s empty', basket);
 
 function isFull() {
   // Below we're asking if the length of our array is less than our constant maxItems.
+  // maxItems was moved to the top of the script.
   if (basket.length < maxItems) {
     return false;
   } else {
@@ -99,7 +100,7 @@ function isFull() {
 function removeItem (array, item) {
   let indexOfItem = array.indexOf(item);
   // Below we need to check to see if the item is in the array.
-  if (indexOfItem > 0) {
+  if (indexOfItem > - 1) {
     // Below we ask for the first occurence of the item and want it taken out.
     array.splice(indexOfItem, 1)
     return item;
@@ -108,3 +109,36 @@ function removeItem (array, item) {
     return null;
   }
 }
+
+// Added testing
+
+addItem('cherries');
+console.log('What\'s in the basket now:', listItems(basket));
+
+addItem('pineapple');
+console.log('What\'s in the basket now:', listItems(basket));
+
+addItem('apple');
+console.log('What\'s in the basket now:', listItems(basket));
+
+addItem('juice');
+console.log('What\'s in the basket now:', listItems(basket));
+console.log('Let\s remove cherries:', removeItem(basket, 'cherries'));
+console.log('What\'s in the basket now:', listItems(basket));
+console.log('Let\'s use our isFull function:', isFull(basket));
+
+addItem('V8');
+console.log('What\'s in the basket now:', listItems(basket));
+
+addItem('juice');
+console.log('What\'s in the basket now:', listItems(basket));
+
+// Let's try adding another item.
+
+console.log('grapes will return false and won\'t be added:', addItem('grapes'));
+console.log('What\'s in the basket now:', listItems(basket));
+
+console.log('Let\'s use our isFull function:', isFull(basket));
+
+console.log('Time to empty our basket.', empty(basket));
+console.log('Calling our basket variable to double check it is empty', basket);
